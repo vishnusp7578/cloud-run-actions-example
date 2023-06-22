@@ -33,6 +33,8 @@ jobs:
           run: docker build . -t gcr.io/reflected-night-357710:$GITHUB_SHA 
         - name: Docker auth
           run: gcloud auth configure-docker gcr.io 
+        - name: Project Auth
+          run: gcloud auth set project reflected-night-357710
 
         - name: Deploy Docker image
           run: gcloud run deploy my-github --project reflected-night-357710 --image gcr.io/reflected-night-357710:$GITHUB_SHA  --region us-central1 --platform managed --allow-unauthenticated
