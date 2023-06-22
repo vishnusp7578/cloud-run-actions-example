@@ -30,7 +30,7 @@ jobs:
           uses: google-github-actions/setup-gcloud@v0
 
         - name: Build Docker image
-          run: docker build . -t gcr.io/reflected-night-357710/github-action:v1
+          run: docker build ./Dockerfile.txt -t gcr.io/reflected-night-357710/github-action:v1
 
         - name: Test Docker image
           run: docker run $IMAGE_NAME sh -c "go test -v" 
