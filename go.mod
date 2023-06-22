@@ -1,4 +1,4 @@
-module github/leozz37/cloud-run-actions-example
+module github/vishnusp7578/cloud-run-actions-example
 
 go 1.15
 
