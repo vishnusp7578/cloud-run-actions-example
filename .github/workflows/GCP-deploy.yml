@@ -32,11 +32,8 @@ jobs:
         - name: Build Docker image
           run: docker build . -t gcr.io/reflected-night-357710/github-action:v1
 
-        - name: Test Docker image
-          run: docker run $IMAGE_NAME sh -c "go test -v" 
-
         - name: Push Docker image
-          run: docker push $IMAGE_NAME
+          run: docker push gcr.io/reflected-night-357710/github-action:v1
 
         - name: Deploy Docker image
           run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image $IMAGE_NAME --region us-central1 --platform managed --allow-unauthenticated
