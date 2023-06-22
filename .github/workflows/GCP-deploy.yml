@@ -30,7 +30,7 @@ jobs:
           uses: actions/checkout@v2
 
         - name: Build Docker image
-          run: docker build . -t europe-west1-docker.pkg.dev/reflected-night-357710/github-action:v1
+          run: docker build . -t europe-west1-docker.pkg.dev/reflected-night-357710/github-action:v1 
         - name: Docker auth
           run: gcloud auth configure-docker europe-west1-docker.pkg.dev 
 
